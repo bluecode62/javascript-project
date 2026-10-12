@@ -78,8 +78,9 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  transition: 0.4s;
 }
 
-.alert-container.active {
+.active.alert-container {
   right:-300px;
 }
