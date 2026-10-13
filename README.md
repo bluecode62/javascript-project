@@ -17,7 +17,7 @@
 <img width="861" height="437" alt="image" src="https://github.com/user-attachments/assets/05d62b10-7a26-42a4-8afa-c820d089dbe1" />
 
 
-```
+```javascript
 function createPassword() {
   const chars =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+?:{}[]"; //숫자영문기호 준비
