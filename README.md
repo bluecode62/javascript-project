@@ -58,6 +58,8 @@ copyIconEl.addEventListener("click", () => {
 }
 ```
 <p>alert-container의 css</p>
+<br>
+<br>
 
 ```javascript
 function createPassword() {
