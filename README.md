@@ -4,7 +4,7 @@
   <li>Random Password Generator</li>
 </ul>
 
-<br />
+<hr />
 
 <h2>Random Password Generator</h2>
 <img width="622" height="340" alt="image" src="https://github.com/user-attachments/assets/2f65891c-c670-491d-acd3-a683e9d38859" />
