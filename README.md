@@ -13,9 +13,51 @@
 <br/>
 
 <h4>Javascript code</h4>
-<img width="671" height="436" alt="image" src="https://github.com/user-attachments/assets/2e6efbd8-f168-4bd4-8c90-ffcf34c52498" />
-<img width="861" height="437" alt="image" src="https://github.com/user-attachments/assets/05d62b10-7a26-42a4-8afa-c820d089dbe1" />
 
+```javascript
+const btnEl = document.querySelector(".btn"); // 버튼 초기화
+const inputEl = document.getElementById("input"); // 랜덤비번창 초기화
+const copyIconEl = document.querySelector(".fa-copy"); // 복사버튼 초기화
+const alertContainerEl = document.querySelector(".alert-container"); // 알림창 초기화
+
+btnEl.addEventListener("click", () => {
+  createPassword();
+});
+
+copyIconEl.addEventListener("click", () => {
+  copyPassword(); // 복사버튼 누를 시 copyPassword() 실행
+  if (inputEl.value) { 
+    alertContainerEl.classList.remove("active"); //알림창 클래스 "active" 지워서 등장
+    setTimeout(() => {
+      alertContainerEl.classList.add("active"); // 2000초 후 다시 클래스 "active" 붙여서 오른쪽으로 퇴장
+    }, 2000);
+  }
+});
+
+```
+
+```css
+.alert-container {
+  position: fixed;
+  width: 300px;
+  height: 50px;
+  background-color: lightgreen;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.active.alert-container {
+  right:-300px;
+}
+```
+<p>alert-container의 css</p>
 
 ```javascript
 function createPassword() {
@@ -29,6 +71,12 @@ function createPassword() {
   }
   alertContainerEl.textContent = password + "copied!"; // 복사 알림창에 랜덤번호 + "copied!" 넣고 등장
   inputEl.value = password; // 비밀번호창에 표시
+}
+
+function copyPassword() {
+  inputEl.select(); // 복사할 대상인 input 안의 텍스트 전체를 선택 상태로 만듦
+  inputEl.setSelectionRange(0, 9999); // 바일 환경이나 특정 브라우저(특히 iOS 사파리 등)에서도 텍스트가 완벽하게 전체 선택되도록 범위를 지정해 주는 메서드. 0번 글자부터 9999번 글자(사실상 끝까지)까지 전부 선택
+  navigator.clipboard.writeText(inputEl.value); // 선택된 텍스트를 실제로 클립보드(복사 공간)에 복사함
 }
 ```
 
