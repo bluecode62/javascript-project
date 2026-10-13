@@ -25,7 +25,7 @@ function createPassword() {
   let password = ""; // 비밀번호 담을 변수
   for (let index = 0; index < passwordLength; index++) {   // 비밀번호 길이만큼
     const randomNum = Math.floor(Math.random() * chars.length); // 랜덤비번 선정
-    password += chars.substring(randomNum, randomNum + 1); // 비밀번호 변수에 랜덤번호 초기화
+    password += chars.substring(randomNum, randomNum + 1); // 전체 문자열(chars)에서 랜덤으로 뽑은 번호 (randomNum) 위치의 글자 딱 1개를 잘라서 가져오는(추출하는) 코드
   }
   alertContainerEl.textContent = password + "copied!"; // 복사 알림창에 랜덤번호 + "copied!" 넣고 등장
   inputEl.value = password; // 비밀번호창에 표시
