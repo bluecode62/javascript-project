@@ -60,7 +60,6 @@ copyIconEl.addEventListener("click", () => {
 ```
 <p>alert-container의 css</p>
 <br>
-<br>
 
 ```javascript
 function createPassword() {
@@ -82,7 +81,7 @@ function copyPassword() {
   navigator.clipboard.writeText(inputEl.value); // 선택된 텍스트를 실제로 클립보드(복사 공간)에 복사함
 }
 ```
-
+<br>
 
 <h4>Basic Calculator</h4>
 
