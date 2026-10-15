@@ -2,6 +2,7 @@
 
 <ul>
   <li>Random Password Generator</li>
+  <li>Basic Calculator</li>
 </ul>
 
 <hr />
@@ -82,4 +83,11 @@ function copyPassword() {
 }
 ```
 
+
+<h4>Basic Calculator</h4>
+
+
+<img width="435" height="425" alt="image" src="https://github.com/user-attachments/assets/b30c3521-2c80-4764-a3eb-722a9c5be772" />
+<img width="425" height="425" alt="image" src="https://github.com/user-attachments/assets/777421ce-f958-4d18-b956-b9d3a70a6e1b" />
+<img width="421" height="420" alt="image" src="https://github.com/user-attachments/assets/c3386b72-f7b2-4a21-bbbb-3c590d56de2d" />
 
