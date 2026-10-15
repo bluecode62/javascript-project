@@ -90,3 +90,33 @@ function copyPassword() {
 <img width="425" height="425" alt="image" src="https://github.com/user-attachments/assets/777421ce-f958-4d18-b956-b9d3a70a6e1b" />
 <img width="421" height="420" alt="image" src="https://github.com/user-attachments/assets/c3386b72-f7b2-4a21-bbbb-3c590d56de2d" />
 
+
+```javascript
+const buttonsEl = document.querySelectorAll("button"); // 버튼 초기화
+const inputFieldEl = document.getElementById("result"); // 입력값 초기화
+
+for (let i = 0; i < buttonsEl.length; i++) {
+  buttonsEl[i].addEventListener("click", () => { //번호 버튼 누를 때마다
+    const buttonValue = buttonsEl[i].textContent;  // 버튼값 초기화
+    if (buttonValue === "C") { // "C" 버튼값일 때
+      clearResult(); // clearResult() 실행
+    } else if (buttonValue === "=") { // "=" 버튼값일 때
+      calculateresult(); // calculateresult() 실행
+    } else {
+      appendValue(buttonValue); // 아무것도 아닐 때 숫자값 표시
+    }
+  });
+}
+
+function clearResult() {
+  inputFieldEl.value = '';  // 입력값 공백
+}
+
+function calculateresult() {
+  inputFieldEl.value = eval(inputFieldEl.value); // 문자열(글자)로 되어 있는 수식("5+5" 등)을 그대로 전달받아 실제 자바스크립트 계산식으로 실행하고 그 결과를 돌려줌
+}
+
+function appendValue(buttonValue) {
+  inputFieldEl.value += buttonValue; // 입력값에 버튼값 더하기
+}
+```
