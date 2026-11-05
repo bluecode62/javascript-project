@@ -7,10 +7,12 @@ body {
   justify-content: center;
   font-family: cursive;
   background-color: slateblue;
+  overflow: hidden;
 }
 
 h2{
   color: white;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
