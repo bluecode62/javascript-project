@@ -120,3 +120,53 @@ function appendValue(buttonValue) {
   inputFieldEl.value += buttonValue; // 입력값에 버튼값 더하기
 }
 ```
+
+
+<br>
+
+<h4>New Year Countdown</h4>
+
+<img width="623" height="366" alt="스크린샷 2026-11-12 231141" src="https://github.com/user-attachments/assets/f491afa7-d2a9-4c41-9432-8a3f125a8a2d" />
+
+```html
+<h2>Countdown to New Year</h2>
+  <div class="year">2027</div> // 내년 표시
+  <div class="countdown">
+    <div id="day">00</div> // 남을 일수 
+    <div id="hour">00</div> // 남은 시간
+    <div id="minute">00</div> // 남은 분
+    <div id="second">00</div> // 남은 초
+  </div>
+```
+
+
+```javascript
+const dayEl = document.getElementById("day"); // 일수 초기화
+const hourEl = document.getElementById("hour"); // 시간 초기화
+const minuteEl = document.getElementById("minute"); // 분 초기화
+const secondEl = document.getElementById("second"); // 초 초기화
+
+const newYearTime = new Date("Jan 1, 2027 00:00:00").getTime(); // 내년 초기화
+
+updateCountdown();
+
+function updateCountdown() {
+  const now = new Date().getTime(); // 현재 시각 초기화
+  const gap = newYearTime - now; // 현재와 내년 시간 차이 계산 초기화
+
+  const second = 1000; // 1초
+  const minute = second * 60; // 1분
+  const hour = minute * 60; // 1시간
+  const day = hour * 24; // 1일
+
+  const d = Math.floor(gap / day); // 남은 전체 시간(ms)에서 며칠(day)이 들어가고 남는지 정수로 계산
+  const h = Math.floor((gap % day) / hour); // 일(day)을 제외하고 남은 시간 중에서 몇 시간(hour)인지 계산
+  const m = Math.floor((gap % hour) / minute) // 시간까지 제외하고 남은 시간 중에서 몇 분(minute)인지 계산
+  const s = Math.floor((gap % minute) / second); // 분까지 제외하고 남은 시간 중에서 몇 초(second)인지 계산
+  dayEl.innerText = d; // html로 일 표시
+  hourEl.innerText = h; // html로 시간 표시
+  minuteEl.innerText = m; // html로 분 표시
+  secondEl.innerText = s; // html로 초 표시
+  setTimeout(updateCountdown, 1000);  // 1초(1000ms)마다 지난 후 updateCountdown 함수를 실행하여 카운트다운을 반복
+}
+```
