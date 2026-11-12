@@ -130,13 +130,13 @@ function appendValue(buttonValue) {
 
 ```html
 <h2>Countdown to New Year</h2>
-  <div class="year">2027</div> /*내년 표시*/
+ <div class="year">2027</div> <!-- 내년 표시 -->
   <div class="countdown">
-    <div id="day">00</div> // 남을 일수 
-    <div id="hour">00</div> // 남은 시간
-    <div id="minute">00</div> // 남은 분
-    <div id="second">00</div> // 남은 초
-  </div>
+    <div id="day">00</div> <!-- 남은 일수 -->
+    <div id="hour">00</div> <!-- 남은 시간 -->
+    <div id="minute">00</div> <!-- 남은 분 -->
+    <div id="second">00</div> <!-- 남은 초 -->
+</div>
 ```
 
 
